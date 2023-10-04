@@ -1,4 +1,5 @@
-function  to_Gaussian(folder_path_input, folder_path_output)
+function to_Gaussian(folder_path_input, folder_path_output)
+
 % Get a list of all the txt files in the folder
 txt_files = dir(fullfile(folder_path_input, '*.txt'));
 numtxt = length(txt_files);
@@ -28,14 +29,18 @@ for file_idx = 1:numel(txt_files)
     end
 
     filename = erase(filename, ".txt");
-    output_filename = sprintf('%s.inp', filename);
-    output_filename = strcat(folder_path_output,"/" ,output_filename);
+    output_folder = strcat(folder_path_output, "/", filename);
+    
+    % Create a folder with the same name as the file
+    mkdir(output_folder);
+    
+    output_filename = sprintf('%s/%s.inp', output_folder, filename);
 
     fileID = fopen(output_filename, 'w');
 
     fprintf(fileID, '%%chk=');
     fprintf(fileID, '%s.chk', filename);
-    fprintf(fileID, '\n#P B3LYP/6-311G(d,p) Opt Freq(Raman)');
+    fprintf(fileID, '\n#P B3LYP/6-311G(d,p) Opt Freq');
     fprintf(fileID, '\n');
     fprintf(fileID, '\n');
     fprintf(fileID, '%s', filename);

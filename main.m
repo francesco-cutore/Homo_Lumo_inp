@@ -4,9 +4,13 @@ clear;clc;close all
 current_dir = pwd;
 CONSTANTS = constant_intializer(current_dir);
 
+% Importa le funzioni
+addpath("Functions/")
+
 % Svuota la cartella inputs 
 delete(strcat(CONSTANTS("Output"), "/*.txt"))
-delete(strcat(CONSTANTS("Output_Gaussian"), "/*.inp"))
+%delete(strcat(CONSTANTS("Output_Gaussian"), "/*"))
+deleteAllElementsInFolder(CONSTANTS("Output_Gaussian"))
 
 % Importa le funzioni
 addpath("Functions/")
