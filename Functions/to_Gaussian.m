@@ -42,7 +42,7 @@ for file_idx = 1:numel(txt_files)
 
     fprintf(fileID, '%%chk=');
     fprintf(fileID, '%s.chk', filename);
-    fprintf(fileID, '\n#P B3LYP/6-311G(d,p) Opt Freq');
+    fprintf(fileID, '\n#P B3LYP/6-31G(d,p) Opt Freq');
     fprintf(fileID, '\n');
     fprintf(fileID, '\n');
     fprintf(fileID, '%s', filename);

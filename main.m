@@ -63,11 +63,10 @@ Hexcentres= [0,0;Hexcentres];
 % Trova i carboni candidati ad essere sostituiti con boro o azoto
 Candidates = nicesubstitution(Graph,carbons,p,q,Hexcentres);
 
-
 substitution_list = cell(1, size(Candidates,1));
 for i=1:size(Candidates,1)
     substitution_list{i} = cell(2, 3);
-    substitution_list{i}{1,1} = "B";
+    substitution_list{i}{1,1} = "B";                               
     substitution_list{i}{2,1} = "N";
     substitution_list{i}{1,2} = carbons(Candidates(i, 1), 1);
     substitution_list{i}{1,3} = carbons(Candidates(i, 1), 2);
@@ -79,10 +78,11 @@ end
 for i = 1:length(hexagons)
     hexagons(i).draw(fig, false);
 end
-%view(25, 90)
+view(25, 90)
 
 % Ottiene le stringhe degli esagoni
 general_name = strcat(CONSTANTS("Output"), "/isomero_%d_%d.txt");
+
 for k = 1:size(Candidates, 1)
     filename = sprintf(general_name, Candidates(k, 1), Candidates(k, 2));
     hexagon_strings = string([]);
