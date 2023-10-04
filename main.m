@@ -9,7 +9,6 @@ addpath("Functions/")
 
 % Svuota la cartella inputs 
 delete(strcat(CONSTANTS("Output"), "/*.txt"))
-%delete(strcat(CONSTANTS("Output_Gaussian"), "/*"))
 deleteAllElementsInFolder(CONSTANTS("Output_Gaussian"))
 
 % Importa le funzioni

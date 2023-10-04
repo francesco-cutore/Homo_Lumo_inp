@@ -1,3 +1,4 @@
+%% Clear the output folder
 function deleteAllElementsInFolder(folder_path)
 
 % Check if the folder exists
@@ -25,8 +26,4 @@ for i = 1:length(elements)
         end
     end
 end
-
-% Optionally, you can delete the main folder itself (uncomment the line below)
-% rmdir(folder_path);
-
 end
